@@ -7,5 +7,8 @@
         groups: nodejs-api
       changed_when: false
 
+    - name: Ensure ping is present.
+      apt: name=iputils-ping state=present
+
 - import_playbook: ../deployments-rolling/playbooks/provision.yml
 - import_playbook: ../deployments-rolling/playbooks/deploy.yml
